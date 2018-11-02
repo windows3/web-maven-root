@@ -1,0 +1,41 @@
+<assembly>
+    <!-- 项目打成Zip包的Id -->
+    <id>bin</id>
+    <formats>
+        <!-- 包的后缀 -->
+        <format>zip</format>
+    </formats>
+    <dependencySets>
+        <!-- 项目依赖包的输出目录，下面为当前目录的lib文件夹下 -->
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <!-- 项目一些说明的资源输出的目录，下面为当前目录 -->
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>/</outputDirectory>
+            <!-- 指定那些文件需要复制进该目录下-->
+            <includes>
+                <include>README.txt</include>
+                <include>LICENSE</include>
+                <include>COPYRIGHT</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>/config</outputDirectory>
+            <includes>
+                <include>configuration.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>/bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
